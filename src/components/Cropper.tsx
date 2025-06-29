@@ -24,7 +24,7 @@ const ImageCropper: React.FC<CropperProps> = ({ image, onCropChange, onCropCompl
   }, [onZoomChange]);
 
   return (
-    <div style={{ position: 'relative', width: '100%', height: 400 }}>
+    <div data-testid="cropper-component" style={{ position: 'relative', width: '100%', height: 400 }}>
       <Cropper
         image={image}
         crop={crop}
