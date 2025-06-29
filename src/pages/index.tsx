@@ -11,36 +11,7 @@ const IndexPage: React.FC = () => {
   const [croppedImage, setCroppedImage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
-  const handleImageLoad = () => {
-    setError(null);
-    setCroppedImage(null);
-  };
-
-  const handleCropComplete = useCallback((croppedArea: Area, croppedAreaPixels: Area) => {
-    setCroppedAreaPixels(croppedAreaPixels);
-    setCropDimensions({ width: croppedAreaPixels.width, height: croppedAreaPixels.height });
-  }, [])
-
-  const handleCropImage = async () => {
-    if (!imageUrl || !croppedAreaPixels) return;
-    try {
-      const croppedImageBase64 = await cropImage(imageUrl, croppedAreaPixels);
-      setCroppedImage(croppedImageBase64);
-
-      const cropData: CropData = {
-        originalUrl: imageUrl,
-        cropArea: croppedAreaPixels,
-        croppedImage: croppedImageBase64,
-        timestamp: Date.now(),
-      };
-
-      const history = JSON.parse(localStorage.getItem('crop_history') || '[]');
-      history.push(cropData);
-      localStorage.setItem('crop_history', JSON.stringify(history));
-    } catch (err) {
-      setError('Failed to crop image.');
-    }
-  };
+  
 
   const [history, setHistory] = useState<CropData[]>([]);
 
