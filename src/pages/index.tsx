@@ -1,8 +1,8 @@
 import React, { useState, useCallback } from 'react';
-import ImageCropper from '../../components/Cropper';
-import { cropImage } from '../../utils/cropImage';
-import { CropData } from '../../types/crop';
-import { Area } from 'react-easy-crop/types';
+import ImageCropper from '../components/Cropper';
+import { cropImage } from '../utils/cropImage';
+import { CropData } from '../types/crop';
+import { Area } from 'react-easy-crop';
 
 const IndexPage: React.FC = () => {
   const [imageUrl, setImageUrl] = useState<string>('');
