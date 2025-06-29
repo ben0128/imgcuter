@@ -29,7 +29,7 @@ const ImageCropper: React.FC<CropperProps> = ({ image, onCropChange, onCropCompl
         image={image}
         crop={crop}
         zoom={zoom}
-        aspect={4 / 3}
+        
         onCropChange={handleCropChange}
         onCropComplete={onCropComplete}
         onZoomChange={handleZoomChange}
