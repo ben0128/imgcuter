@@ -7,6 +7,7 @@ import { Area } from 'react-easy-crop';
 const IndexPage: React.FC = () => {
   const [imageUrl, setImageUrl] = useState<string>('');
   const [croppedAreaPixels, setCroppedAreaPixels] = useState<Area | null>(null);
+  const [cropDimensions, setCropDimensions] = useState<{ width: number; height: number } | null>(null);
   const [croppedImage, setCroppedImage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -17,6 +18,7 @@ const IndexPage: React.FC = () => {
 
   const handleCropComplete = useCallback((croppedArea: Area, croppedAreaPixels: Area) => {
     setCroppedAreaPixels(croppedAreaPixels);
+    setCropDimensions({ width: croppedAreaPixels.width, height: croppedAreaPixels.height });
   }, []);
 
   const handleCropImage = async () => {
@@ -62,6 +64,11 @@ const IndexPage: React.FC = () => {
           <button onClick={handleCropImage} style={{ marginTop: '10px' }}>
             Crop Image
           </button>
+          {cropDimensions && (
+            <p>
+              Crop Size: {cropDimensions.width}px x {cropDimensions.height}px
+            </p>
+          )}
         </>
       )}
       {croppedImage && (
