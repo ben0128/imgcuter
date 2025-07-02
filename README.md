@@ -14,7 +14,7 @@
 - **Language**: TypeScript
 - **Build Tool**: Vite
 - **Key Libraries**:
-  - `react-easy-crop`: For the cropping UI.
+    - `react-easy-crop`: For the cropping UI.
 - **Storage**: Browser `localStorage` for history.
 - **Core Logic**: HTML5 Canvas API for image manipulation.
 

@@ -8,7 +8,7 @@ This project is a simple front-end image cropping tool built with React and Type
 - **Language**: TypeScript
 - **Build Tool**: Vite
 - **Key Libraries**:
-  - `react-easy-crop` for the cropping UI.
+    - `react-easy-crop` for the cropping UI.
 - **Storage**: Browser `localStorage` is used to save cropping history.
 - **Core Logic**: HTML5 Canvas API for image manipulation.
 
